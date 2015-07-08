@@ -1,0 +1,135 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h1>Neural Networks</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" id="data-io">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<tabset>
+						<tab heading="Create Training Samples" select="endTraining()">
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" id="controls">
+								<h4>Sample Controls</h4>
+								<button class="btn btn-primary" ng-click="reset()">Reset</button>
+								<button class="btn btn-primary" ng-class="{'disabled': !savable}" ng-click="save()">Save</button>
+								<h4>Set Controls</h4>
+								<form ng-submit="loadSamples()" class="group">
+									<p>Enter a set name to load from local storage, or just click "Load Set" to paste saved json</p>
+									<input type="text" class="form-control" placeholder="Sample Set Name" ng-model="loadName"/>
+									<input type="submit" class="btn btn-primary btn-large" value="Load Samples"/>
+								</form>
+								<form ng-submit="saveSamples()" class="group" ng-show="currentSet.samples.length">
+									<input type="text" class="form-control" placeholder="Sample Set Name" ng-model="currentSet.name"/>
+									<input type="text" class="form-control" placeholder="Desired Output" ng-model="currentSet.desiredOutput"/>
+									<input type="submit" class="btn btn-primary btn-large" ng-class="{'disabled': !currentSet.name || !currentSet.desiredOutput}" value="Save Set"/>
+								</form>
+								<button class="btn btn-primary btn-large" ng-show="currentSet.samples.length" ng-click="newVerify()">Create New Set</button>
+								<h4>Training Sets</h4>
+								<p class="notice">(click name to view)</p>
+								<table class="table">
+									<tr ng-repeat="set in sets">
+										<td>
+											<a ng-click="loadThis(set.name)" class="clickable">{{ set.name }} ({{ set.samples.length }} items) <span ng-show="set.desiredOutput">'{{ set.desiredOutput }}'</span></a>
+											<button class="btn btn-danger delete-btn" ng-click="removeSet($index)">x</button>
+										</td>
+									</tr>
+								</table>
+
+							</div>
+							<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+								<h3>New Training Sample</h3>
+								<div class="grid">
+									<button class="grid-element" ng-repeat="input in inputs track by $index" ng-class="{'black': input == 1}" ng-click="selectInput($index)">
+									</button>
+								</div>
+								
+							</div>
+						</tab>
+						<tab heading="Train Sets" select="startTraining()">
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" id="controls">
+								<h4>Training Sets</h4>
+								<p class="notice">(click name to view)</p>
+								<table class="table">
+									<tr ng-repeat="set in sets">
+										<td>
+											<a ng-click="loadThis(set.name)" class="clickable">{{ set.name }} ({{ set.samples.length }} items) <span ng-show="set.desiredOutput">'{{ set.desiredOutput }}'</span></a>
+											<button class="btn btn-danger delete-btn" ng-click="removeSet($index)">x</button>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+								<h4 ng-show="sets.length < nOut">Create at least {{ nOut - sets.length }} more Training Sample Sets ({{ nOut }} total) before training</h4>
+								<div  ng-hide="sets.length < nOut">
+									<div ng-show="trainingStep == 1">
+										<h4>Please enter the desired Output for each set</h4>
+										<p ng-repeat="set in sets">{{ set.name }} = <input type="text" ng-model="set.desiredOutput" ng-minlength="1" ng-maxlength="1" ng-focus="loadThis(set.name)"/></p>
+										<!--
+										<pre>{{ dataToDisplay }}</pre>
+										-->
+										<h4>And select an <span class="bold">&eta;</span> value</h4>
+										<p><span class="bold">&eta;</span> is our learning rate.  A higher <span class="bold">&eta;</span> value results in a greater adjustment to the previous weight.  This could help the network learn more quicly, but could also result in not learning very well, or not learning at all.</p>
+										<p><input type="text" ng-model="eta" placeholder="&eta; (eta)" /></p>
+										<h4>This could take a while. . . as in 5 minutes-ish.  Just a heads Up.</h4>
+										<button class="btn btn-primary next" ng-click="train()" ng-disabled="!eta">Start Training</button>
+									</div>
+									<!--<img src="img/loader.gif" ng-show="trainingStep == 2">-->
+									<!--<span us-spinner="{radius:30, width:8, length: 16}" spinner-key="trainSpinner"></span>-->
+									<!--<p class="load-text" ng-show="trainingStep == 2">This could take a while. . . as in 5 minutes-ish.  Just a heads Up.</p>-->
+									<div ng-show="trainingStep == 2">
+										<h4>You've succsesfully trained this system, You can now test this trained system on the "Character Reader" tab</h4>
+										<h4>Training Data</h4>
+										<p>Number Inputs: {{ nIn }}</p>
+										<p>Number Outputs: {{ nOut }}</p>
+										<p>Number Hidden Inputs: {{ nHidden }}</p>
+										<p>Iterations Required: {{ epochs }}</p>
+										<p>Ending Total Error: {{ totalError }}</p>
+										<p>Characters that can be recognized by this set: <span class="ourChar" ng-repeat="s in sets track by $index">{{ s.desiredOutput }}</span><p>
+										<!--<pre>{{ dataToDisplay }}</pre>-->
+									</div>
+								</div>
+							</div>
+						</tab>
+						<tab heading="Use Pre-trained Network" select="trainPreSet()">
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" id="controls">
+								<h4>Sample Controls</h4>
+								<button class="btn btn-primary" ng-click="reset()">Reset</button>
+								<button class="btn btn-primary" ng-class="{'disabled': !savable}" ng-click="recognize()">Recognize</button>
+							</div>
+							<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+								<h3>Draw Character to Recognize</h3>
+								<p>When you're finished, click "Recognize" to the left</p>
+								<div class="grid">
+									<button class="grid-element" ng-repeat="input in inputs track by $index" ng-class="{'black': input == 1}" ng-click="selectInput($index)">
+									</button>
+								</div>
+							</div>
+						</tab>
+					</tabset>
+				</div>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" id="controls">
+				</div>
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+					<textarea ng-show="dumpedData" class="form-control" select-on-click>{{ dumpedData }}</textarea>
+					<button class="btn btn-large btn-primary" ng-show="dumpedData" ng-click="dumpedData = ''" id="done-button">All done saving data</button>
+					<textarea ng-show="loadingData" class="form-control" ng-model="dataToLoad">{{ dumpedData }}</textarea>
+					<button class="btn btn-large btn-primary" ng-show="loadingData" ng-click="loadTheData()" id="load-button">Go</button>
+					<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+					<button class="btn btn-large btn-primary" ng-show="verify" ng-click="newSet()" id="load-button">Ok</button>
+					
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" ng-show="currentSet.samples.length" id="saved-samples">
+			<h4>Current Training Set</h4>
+			<div class="mini-grid" ng-repeat="sample in currentSet.samples track by $index">
+				<div class="mini-grid-element" ng-repeat="input in sample track by $index" ng-class="{'black': input == 0.9}">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

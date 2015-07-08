@@ -1,0 +1,208 @@
+.blue {
+  color: #0e2b61;
+}
+.white {
+  color: white;
+}
+.blue-bg {
+  background-color: #0e2b61;
+}
+.bold {
+  font-weight: bold;
+}
+.center {
+  text-align: center;
+}
+body {
+  background-image: url('../img/greyzz.png');
+}
+.demo-header {
+  background-color: #171717;
+}
+.demo-wrapper {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+.gantt {
+  width: 100% !important;
+}
+.gantt .gantt-scrollable {
+  overflow-x: hidden;
+}
+.gantt .gantt-task-content {
+  color: white !important;
+}
+#schedule-controls > div {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.employee {
+  margin-right: 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.employee:hover {
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.emp-row {
+  border-bottom: solid black 1px;
+}
+/*******************************************
+* Neural Networks Styles
+********************************************/
+h1 {
+  margin-top: 0px;
+}
+h3,
+h4 {
+  text-align: center;
+}
+h4,
+h3 {
+  margin-top: 10px;
+}
+.grid {
+  width: 246px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  border: solid black 3px;
+}
+.grid-element {
+  background-color: white;
+  position: relative;
+  height: 30px;
+  width: 30px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  border-width: 1px;
+}
+.mini-grid {
+  width: 124px;
+  border: solid 2px black;
+  margin-bottom: 10px;
+  margin-left: 18px;
+}
+.mini-grid-element {
+  position: relative;
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border: solid 1px gray;
+  border-top: none;
+  border-left: none;
+  vertical-align: top;
+  margin: 0px;
+  outline: none;
+}
+.black {
+  background-color: black;
+}
+.bold {
+  font-weight: bold;
+}
+#controls .btn {
+  margin-bottom: 15px;
+  margin-right: 4px;
+}
+#controls .btn-large {
+  font-size: 16px;
+}
+#controls input {
+  width: 130px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+#controls .group {
+  padding-top: 12px;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  border: solid 1px gray;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#saved-samples {
+  max-height: 855px;
+  overflow-y: auto;
+}
+.nav-tabs {
+  cursor: pointer;
+}
+#data-io {
+  text-align: center;
+}
+#data-io textarea {
+  margin-top: 20px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+#load-button {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+}
+#done-button {
+  margin-bottom: 15px;
+}
+.table {
+  text-align: center;
+}
+.table td {
+  padding: 4px !important;
+}
+.delete-btn {
+  padding: 0px 6px;
+  margin: 0px !important;
+}
+p.notice {
+  margin: 0px;
+}
+.clickable {
+  cursor: pointer;
+  text-decoration: none!important;
+}
+pre {
+  text-align: left;
+}
+.for-me {
+  color: cornflowerblue;
+  font-weight: bold;
+}
+.next {
+  margin-top: 15px;
+}
+.load-text {
+  margin-top: 40px;
+}
+a {
+  color: white !important;
+  text-decoration: none;
+}
+a:link {
+  color: white !important;
+  text-decoration: none;
+}
+a:visited {
+  color: white !important;
+  text-decoration: none;
+}
+a:hover {
+  color: white !important;
+  text-decoration: none;
+}
+a:active {
+  color: white !important;
+  text-decoration: none;
+}

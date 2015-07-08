@@ -1,0 +1,138 @@
+ 
+
+.customShield(@color, @light: @color + #101505, @size: 22em){
+  margin: (@size * .227) auto;
+  width: @size;
+  height: @size;
+  position: relative;
+  &:before {
+    display: block;
+    content: '';
+    border: solid @color (@size * .564);
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom: none;
+    width: 0;
+    position: absolute;
+    top: (@size * .246);
+    left: (@size * -.061);
+    z-index: 1;
+    transform: scaleY(2.2);
+    transition: all 0.5s ease;
+  }
+  &:after {
+    content: '';
+    z-index: -50;
+    position: absolute;
+    left: 50%;
+    margin-left: (@size * -.477);
+    top: 50%;
+    margin-top: (@size * -.586);
+    width: (@size * .955);
+    height: (@size * 1.223);
+    border-radius: 0 0 60% 60%;
+    box-shadow: 0 0 80px 0px #555;
+  }
+  
+  .shield-left, .shield-right {
+    width: (@size * .439);
+    height: (@size * 1.068);
+    position: absolute;
+    background: @color;
+  }
+
+  .shield-left {
+    left: (@size * .01);
+    transform: skewY(0.4rad) rotate(-7deg);
+  }
+
+  .shield-right {
+    right: (@size * .01);
+    transform: skewY(-0.4rad) rotate(7deg);
+  }
+
+  .shield-right-lighter {
+    position: absolute;
+    top: (@size * .091);
+    right: (@size * .091);
+    z-index: 10;
+    width: (@size * .355);
+    height: (@size * .886);
+    background: @light;
+    transform: skewY(-0.4rad) rotate(7deg);
+  }
+  .shield-right-lighter::before, .shield-right-lighter::after {
+    position: absolute;
+    display: block;
+    content: '';
+  }
+  .shield-right-lighter::before {
+    top: (@size * -.068);
+    right: (@size * -.018);
+    width: 0;
+    transform: skewY(0.4rad) rotate(-7deg);
+    border: solid @light (@size * .243);
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom: none;
+  }
+  .shield-right-lighter::after {
+    width: 0;
+    height: (@size * .827);
+    top: (@size * -.109);
+    left: (@size * -.062);
+    border-left: solid (@size * .114) @light;
+    border-top: solid (@size * .057) transparent;
+    border-bottom: solid (@size * .057) transparent;
+    transform: skewY(0.4rad) rotate(-7deg);
+  }
+  span {
+    z-index: 200;
+    color: white;
+    font-family: "shield", sans-serif;
+    font-weight: 300;
+    font-size: 3em;
+    top: -.38em;
+    left: .015em;
+    text-align: center;
+
+
+    position:relative;
+    display:inline-block;
+    width:1;
+    overflow:hidden;
+    white-space: pre;
+
+    &:before {
+      display:block;
+      z-index:1;
+      position:absolute;
+      top:0;
+      width: 50%;
+      content: attr(data-content); /* dynamic content for the pseudo element */
+      overflow:hidden;
+      pointer-events: none; /* so the base char is selectable by mouse */
+      color: #ebebeb; /* for demo purposes */
+    }
+  }
+}
+
+.orange-shield {
+  .customShield(#E15023, #F16528, 2em)
+}
+
+.blue-shield {
+  .customShield(#0070BA, #26A7DE, 2em)
+}
+
+.yellow-shield {
+  .customShield(#e5a32b, #e6c61d, 2em)
+}
+
+.black-shield {
+  .customShield(#231f20, #4d4d4d, 2em)
+}
+
+.small-icon {
+  font-size: 30px;
+}

@@ -1,0 +1,459 @@
+.orange-shield {
+  margin: 0.454em auto;
+  width: 2em;
+  height: 2em;
+  position: relative;
+}
+.orange-shield:before {
+  display: block;
+  content: '';
+  border: solid #e15023 1.128em;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom: none;
+  width: 0;
+  position: absolute;
+  top: 0.492em;
+  left: -0.122em;
+  z-index: 1;
+  transform: scaleY(2.2);
+  transition: all 0.5s ease;
+}
+.orange-shield:after {
+  content: '';
+  z-index: -50;
+  position: absolute;
+  left: 50%;
+  margin-left: -0.954em;
+  top: 50%;
+  margin-top: -1.172em;
+  width: 1.91em;
+  height: 2.446em;
+  border-radius: 0 0 60% 60%;
+  box-shadow: 0 0 80px 0px #555;
+}
+.orange-shield .shield-left,
+.orange-shield .shield-right {
+  width: 0.878em;
+  height: 2.136em;
+  position: absolute;
+  background: #e15023;
+}
+.orange-shield .shield-left {
+  left: 0.02em;
+  transform: skewY(0.4rad) rotate(-7deg);
+}
+.orange-shield .shield-right {
+  right: 0.02em;
+  transform: skewY(-0.4rad) rotate(7deg);
+}
+.orange-shield .shield-right-lighter {
+  position: absolute;
+  top: 0.182em;
+  right: 0.182em;
+  z-index: 10;
+  width: 0.71em;
+  height: 1.772em;
+  background: #f16528;
+  transform: skewY(-0.4rad) rotate(7deg);
+}
+.orange-shield .shield-right-lighter::before,
+.orange-shield .shield-right-lighter::after {
+  position: absolute;
+  display: block;
+  content: '';
+}
+.orange-shield .shield-right-lighter::before {
+  top: -0.136em;
+  right: -0.036em;
+  width: 0;
+  transform: skewY(0.4rad) rotate(-7deg);
+  border: solid #f16528 0.486em;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom: none;
+}
+.orange-shield .shield-right-lighter::after {
+  width: 0;
+  height: 1.654em;
+  top: -0.218em;
+  left: -0.124em;
+  border-left: solid 0.228em #f16528;
+  border-top: solid 0.114em transparent;
+  border-bottom: solid 0.114em transparent;
+  transform: skewY(0.4rad) rotate(-7deg);
+}
+.orange-shield span {
+  z-index: 200;
+  color: white;
+  font-family: "shield", sans-serif;
+  font-weight: 300;
+  font-size: 3em;
+  top: -0.38em;
+  left: .015em;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 1;
+  overflow: hidden;
+  white-space: pre;
+}
+.orange-shield span:before {
+  display: block;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  content: attr(data-content);
+  /* dynamic content for the pseudo element */
+  overflow: hidden;
+  pointer-events: none;
+  /* so the base char is selectable by mouse */
+  color: #ebebeb;
+  /* for demo purposes */
+}
+.blue-shield {
+  margin: 0.454em auto;
+  width: 2em;
+  height: 2em;
+  position: relative;
+}
+.blue-shield:before {
+  display: block;
+  content: '';
+  border: solid #0070ba 1.128em;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom: none;
+  width: 0;
+  position: absolute;
+  top: 0.492em;
+  left: -0.122em;
+  z-index: 1;
+  transform: scaleY(2.2);
+  transition: all 0.5s ease;
+}
+.blue-shield:after {
+  content: '';
+  z-index: -50;
+  position: absolute;
+  left: 50%;
+  margin-left: -0.954em;
+  top: 50%;
+  margin-top: -1.172em;
+  width: 1.91em;
+  height: 2.446em;
+  border-radius: 0 0 60% 60%;
+  box-shadow: 0 0 80px 0px #555;
+}
+.blue-shield .shield-left,
+.blue-shield .shield-right {
+  width: 0.878em;
+  height: 2.136em;
+  position: absolute;
+  background: #0070ba;
+}
+.blue-shield .shield-left {
+  left: 0.02em;
+  transform: skewY(0.4rad) rotate(-7deg);
+}
+.blue-shield .shield-right {
+  right: 0.02em;
+  transform: skewY(-0.4rad) rotate(7deg);
+}
+.blue-shield .shield-right-lighter {
+  position: absolute;
+  top: 0.182em;
+  right: 0.182em;
+  z-index: 10;
+  width: 0.71em;
+  height: 1.772em;
+  background: #26a7de;
+  transform: skewY(-0.4rad) rotate(7deg);
+}
+.blue-shield .shield-right-lighter::before,
+.blue-shield .shield-right-lighter::after {
+  position: absolute;
+  display: block;
+  content: '';
+}
+.blue-shield .shield-right-lighter::before {
+  top: -0.136em;
+  right: -0.036em;
+  width: 0;
+  transform: skewY(0.4rad) rotate(-7deg);
+  border: solid #26a7de 0.486em;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom: none;
+}
+.blue-shield .shield-right-lighter::after {
+  width: 0;
+  height: 1.654em;
+  top: -0.218em;
+  left: -0.124em;
+  border-left: solid 0.228em #26a7de;
+  border-top: solid 0.114em transparent;
+  border-bottom: solid 0.114em transparent;
+  transform: skewY(0.4rad) rotate(-7deg);
+}
+.blue-shield span {
+  z-index: 200;
+  color: white;
+  font-family: "shield", sans-serif;
+  font-weight: 300;
+  font-size: 3em;
+  top: -0.38em;
+  left: .015em;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 1;
+  overflow: hidden;
+  white-space: pre;
+}
+.blue-shield span:before {
+  display: block;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  content: attr(data-content);
+  /* dynamic content for the pseudo element */
+  overflow: hidden;
+  pointer-events: none;
+  /* so the base char is selectable by mouse */
+  color: #ebebeb;
+  /* for demo purposes */
+}
+.yellow-shield {
+  margin: 0.454em auto;
+  width: 2em;
+  height: 2em;
+  position: relative;
+}
+.yellow-shield:before {
+  display: block;
+  content: '';
+  border: solid #e5a32b 1.128em;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom: none;
+  width: 0;
+  position: absolute;
+  top: 0.492em;
+  left: -0.122em;
+  z-index: 1;
+  transform: scaleY(2.2);
+  transition: all 0.5s ease;
+}
+.yellow-shield:after {
+  content: '';
+  z-index: -50;
+  position: absolute;
+  left: 50%;
+  margin-left: -0.954em;
+  top: 50%;
+  margin-top: -1.172em;
+  width: 1.91em;
+  height: 2.446em;
+  border-radius: 0 0 60% 60%;
+  box-shadow: 0 0 80px 0px #555;
+}
+.yellow-shield .shield-left,
+.yellow-shield .shield-right {
+  width: 0.878em;
+  height: 2.136em;
+  position: absolute;
+  background: #e5a32b;
+}
+.yellow-shield .shield-left {
+  left: 0.02em;
+  transform: skewY(0.4rad) rotate(-7deg);
+}
+.yellow-shield .shield-right {
+  right: 0.02em;
+  transform: skewY(-0.4rad) rotate(7deg);
+}
+.yellow-shield .shield-right-lighter {
+  position: absolute;
+  top: 0.182em;
+  right: 0.182em;
+  z-index: 10;
+  width: 0.71em;
+  height: 1.772em;
+  background: #e6c61d;
+  transform: skewY(-0.4rad) rotate(7deg);
+}
+.yellow-shield .shield-right-lighter::before,
+.yellow-shield .shield-right-lighter::after {
+  position: absolute;
+  display: block;
+  content: '';
+}
+.yellow-shield .shield-right-lighter::before {
+  top: -0.136em;
+  right: -0.036em;
+  width: 0;
+  transform: skewY(0.4rad) rotate(-7deg);
+  border: solid #e6c61d 0.486em;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom: none;
+}
+.yellow-shield .shield-right-lighter::after {
+  width: 0;
+  height: 1.654em;
+  top: -0.218em;
+  left: -0.124em;
+  border-left: solid 0.228em #e6c61d;
+  border-top: solid 0.114em transparent;
+  border-bottom: solid 0.114em transparent;
+  transform: skewY(0.4rad) rotate(-7deg);
+}
+.yellow-shield span {
+  z-index: 200;
+  color: white;
+  font-family: "shield", sans-serif;
+  font-weight: 300;
+  font-size: 3em;
+  top: -0.38em;
+  left: .015em;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 1;
+  overflow: hidden;
+  white-space: pre;
+}
+.yellow-shield span:before {
+  display: block;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  content: attr(data-content);
+  /* dynamic content for the pseudo element */
+  overflow: hidden;
+  pointer-events: none;
+  /* so the base char is selectable by mouse */
+  color: #ebebeb;
+  /* for demo purposes */
+}
+.black-shield {
+  margin: 0.454em auto;
+  width: 2em;
+  height: 2em;
+  position: relative;
+}
+.black-shield:before {
+  display: block;
+  content: '';
+  border: solid #231f20 1.128em;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom: none;
+  width: 0;
+  position: absolute;
+  top: 0.492em;
+  left: -0.122em;
+  z-index: 1;
+  transform: scaleY(2.2);
+  transition: all 0.5s ease;
+}
+.black-shield:after {
+  content: '';
+  z-index: -50;
+  position: absolute;
+  left: 50%;
+  margin-left: -0.954em;
+  top: 50%;
+  margin-top: -1.172em;
+  width: 1.91em;
+  height: 2.446em;
+  border-radius: 0 0 60% 60%;
+  box-shadow: 0 0 80px 0px #555;
+}
+.black-shield .shield-left,
+.black-shield .shield-right {
+  width: 0.878em;
+  height: 2.136em;
+  position: absolute;
+  background: #231f20;
+}
+.black-shield .shield-left {
+  left: 0.02em;
+  transform: skewY(0.4rad) rotate(-7deg);
+}
+.black-shield .shield-right {
+  right: 0.02em;
+  transform: skewY(-0.4rad) rotate(7deg);
+}
+.black-shield .shield-right-lighter {
+  position: absolute;
+  top: 0.182em;
+  right: 0.182em;
+  z-index: 10;
+  width: 0.71em;
+  height: 1.772em;
+  background: #4d4d4d;
+  transform: skewY(-0.4rad) rotate(7deg);
+}
+.black-shield .shield-right-lighter::before,
+.black-shield .shield-right-lighter::after {
+  position: absolute;
+  display: block;
+  content: '';
+}
+.black-shield .shield-right-lighter::before {
+  top: -0.136em;
+  right: -0.036em;
+  width: 0;
+  transform: skewY(0.4rad) rotate(-7deg);
+  border: solid #4d4d4d 0.486em;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom: none;
+}
+.black-shield .shield-right-lighter::after {
+  width: 0;
+  height: 1.654em;
+  top: -0.218em;
+  left: -0.124em;
+  border-left: solid 0.228em #4d4d4d;
+  border-top: solid 0.114em transparent;
+  border-bottom: solid 0.114em transparent;
+  transform: skewY(0.4rad) rotate(-7deg);
+}
+.black-shield span {
+  z-index: 200;
+  color: white;
+  font-family: "shield", sans-serif;
+  font-weight: 300;
+  font-size: 3em;
+  top: -0.38em;
+  left: .015em;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 1;
+  overflow: hidden;
+  white-space: pre;
+}
+.black-shield span:before {
+  display: block;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  content: attr(data-content);
+  /* dynamic content for the pseudo element */
+  overflow: hidden;
+  pointer-events: none;
+  /* so the base char is selectable by mouse */
+  color: #ebebeb;
+  /* for demo purposes */
+}
+.small-icon {
+  font-size: 30px;
+}

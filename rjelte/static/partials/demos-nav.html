@@ -1,0 +1,10 @@
+<div class="container">
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="navbar-header">
+			<a class="navbar-brand" ui-sref="home">Today I Learned</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li ng-repeat="demo in demos"><a ui-sref="demos.{{ demo.slug }}">{{ demo.name }}</a></li>
+		</ul>
+	</nav>
+</div>

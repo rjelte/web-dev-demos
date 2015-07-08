@@ -1,0 +1,136 @@
+{% extends "rjelte/index.html" %}
+
+{% block content %}
+	
+	<!-- === MAIN Background === -->
+	<div class="slide story" id="slide-1">
+		<div class="container">
+			<div id="home-row-1" class="row clearfix">
+				<div class="col-12">
+					<h1 class="font-thin">
+					{{ quote.text|safe }}
+					<!-- <span class="font-block">LEARNING</span> <br> is a treasure that will <br> follow its owner <br> <span class="font-block">everywhere</span>. -->
+					</h1>
+					<h2 class="font-semibold">Let me show you what I've learned. . .</h2>
+					<br>
+					<br>
+				</div><!-- /col-12 -->
+			</div><!-- /row -->
+			<div id="home-row-2" class="row clearfix">
+				<!-- <div class="col-12 col-sm-4">
+					<div class="home-hover navigation-slide" data-slide="4">
+						<div class="small-icon orange-shield" id="shield">
+							<div class="shield-left"></div>
+							<div class="shield-right"></div>
+							<div class="shield-right-lighter"></div>
+							<span data-content="N">N</span>
+						</div>
+					</div>
+					<span>NEURAL NETWORK</span>
+				</div> -->
+				<div class="col-12 col-md-offset-4 col-sm-offset-4 col-sm-4">
+					<a class="block-anchor" href="{% url 'experiment' 'kaunto' %}">
+						<div class="home-hover navigation-slide">
+							<div class="small-icon blue-shield" id="shield">
+								<div class="shield-left"></div>
+								<div class="shield-right"></div>
+								<div class="shield-right-lighter"></div>
+								<span data-content="K">K</span>
+							</div>
+						</div>
+						<span>KAUNTO</span>
+					</a>
+				</div>
+				<!-- <div class="col-12 col-sm-4">
+					<div class="home-hover navigation-slide" data-slide="5">
+						<div class="small-icon yellow-shield" id="shield">
+							<div class="shield-left"></div>
+							<div class="shield-right"></div>
+							<div class="shield-right-lighter"></div>
+							<span data-content="L">L</span>
+						</div>
+					</div>
+					<span>LDS APP</span>
+				</div> -->
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /slide1 -->
+	<!-- === Slide 2 === -->
+	<div class="slide story" id="slide-2" data-slide="2">
+		<div class="container">
+			<div class="row title-row">
+				<div class="col-12 font-thin">The only way to do <span class="font-semibold">Great Work<br></span> is to <span class="font-semibold">love</span> what you do.</div>
+			</div><!-- /row -->
+			<div class="row line-row">
+				<div class="hr">&nbsp;</div>
+			</div><!-- /row -->
+			<div class="row subtitle-row">
+				<div class="col-12 font-thin"> This is what I love to do</div>
+			</div><!-- /row -->
+			<div class="row content-row">
+				<div class="col-12 col-lg-3 col-sm-6">
+					<p><i class="icon icon-laptop"></i></p>
+					<h2 class="font-thin">Web <span class="font-semibold">Apps</span> and <span class="font-semibold">Design</span></h2>
+					<h4 class="font-thin">Create apps that change the way people work, play, and learn.</h4>
+				</div><!-- /col12 -->
+
+				<div class="col-12 col-lg-3 col-sm-6">
+					<p><i class="icon icon-tablet"></i></p>
+					<h2 class="font-thin">Mobile <span class="font-semibold">Experiences</span></h2>
+					<h4 class="font-thin">Create experiences that are beautiful and valuable on any device.</h4>
+				</div><!-- /col12 -->
+				<div class="col-12 col-lg-3 col-sm-6">
+					<p><i class="icon icon-pencil"></i></p>
+					<h2 class="font-thin">Software <span class="font-semibold">Development</span></h2>
+					<h4 class="font-thin">C++, Python, JS, and more.</h4>
+				</div><!-- /col12 -->
+				<div class="col-12 col-lg-3 col-sm-6">
+					<p><i class="icon icon-eye-open"></i></p>
+					<h2 class="font-thin">Visual <span class="font-semibold">Identity</span></h2>
+					<h4 class="font-thin">Get the <span class="font-semibold">attention</span> that you deserve. Be <span class="font-semibold">remembered</span>.</h4>
+				</div><!-- /col12 -->
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /slide2 -->
+
+	<!-- === Slide 6 / Contact === -->
+	<div class="slide story" id="slide-6" data-slide="3">
+		<div class="container">
+			<div class="row title-row">
+				<div class="col-12 font-semibold">Get in touch with me</div>
+			</div><!-- /row -->
+			<div class="row line-row">
+				<div class="hr">&nbsp;</div>
+			</div><!-- /row -->
+			<div class="row subtitle-row">
+				<div class="col-sm-1 hidden-sm">&nbsp;</div>
+				<div class="col-12 col-sm-10 font-thin">I'm on the <span class="font-block">internets</span> <br> and in <span class="font-block">real life</span> too!</div>
+				<div class="col-sm-1 hidden-sm">&nbsp;</div>
+			</div><!-- /row -->
+			<div id="contact-row-4" class="row">
+				<div class="col-sm-1 hidden-sm">&nbsp;</div>
+				<div class="col-12 col-sm-2 with-hover-text">
+					<p><a target="_blank" href="tel:+18017084927"><i class="icon icon-phone"></i></a></p>
+					<span class="hover-text font-thin ">(801)<br>708-4927</span></a>
+				</div><!-- /col12 -->
+				<div class="col-12 col-sm-2 with-hover-text">
+					<p><a target="_blank" href="mailto:imjelte@gmail.com"><i class="icon icon-envelope"></i></a></p>
+					<span class="hover-text font-thin">imjelte<br>@gmail.com</span></a>
+				</div><!-- /col12 -->
+				<div class="col-12 col-sm-2 with-hover-text">
+					<p><a target="_blank" href="https://goo.gl/maps/Il7eo"><i class="icon icon-home"></i></a></p>
+					<span class="hover-text font-thin ">Orem, UT<br>84058</span></a>
+				</div><!-- /col12 -->
+				<div class="col-12 col-sm-2 with-hover-text">
+					<p><a target="_blank" href="http://facebook.com/richard.jelte"><i class="icon icon-facebook"></i></a></p>
+					<span class="hover-text font-thin ">facebook.com/<br>richard.jelte</span></a>
+				</div><!-- /col12 -->
+				<div class="col-12 col-sm-2 with-hover-text">
+					<p><a target="_blank" href="https://twitter.com/rjelte"><i class="icon icon-twitter"></i></a></p>
+					<span class="hover-text font-thin ">@rjelte</span></a>
+				</div><!-- /col12 -->
+				<div class="col-sm-1 hidden-sm">&nbsp;</div>
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /Slide 6 -->
+{% endblock %}

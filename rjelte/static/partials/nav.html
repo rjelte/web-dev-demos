@@ -1,0 +1,38 @@
+<div class="navbar navbar-fixed-top" data-activeslide="1">
+	<div class="container">
+	
+		<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<div class="nav-collapse collapse navbar-responsive-collapse">
+			<ul class="nav row">
+				<li class="col-12 col-sm-3"><a id="menu-link-1" href="/" title="Next Section"><span class="icon icon-home"></span> <span class="text">HOME</span></a></li>
+				<!-- <li data-slide="2" class="col-12 col-sm-2"><a id="menu-link-2" href="#slide-2" title="Next Section"><span class="icon icon-user"></span> <span class="text">SCHEDULER</span></a></li> -->
+				<!-- <li class="col-12 col-sm-3"><a id="menu-link-3" href="{% url 'experiment' 'neural-network' %}" title="Next Section"><span class="icon icon-briefcase"></span> <span class="text">NEURAL NETWORK</span></a></li> -->
+				<li class="col-12 col-sm-3"><a id="menu-link-4" href="{% url 'experiment' 'kaunto' %}" title="Next Section"><span class="icon icon-briefcase"></span> <span class="text">KAUNTO</span></a></li>	
+				<!-- <li class="col-12 col-sm-3"><a id="menu-link-4" href="{% url 'experiment' 'lds-app' %}" title="Next Section"><span class="icon icon-gears"></span> <span class="text">LDS APP</span></a></li> -->
+			</ul>
+			<div class="row">
+				<div class="col-sm-2 active-menu"></div>
+			</div>
+		</div><!-- /.nav-collapse -->
+	</div><!-- /.container -->
+</div><!-- /.navbar -->
+
+<!-- <div class="header">
+	<div class="container">
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" ui-sref="home">Today I Learned</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li ng-repeat="demo in demos"><a ui-sref="demos.{{ demo.slug }}">{{ demo.name }}</a></li>
+			</ul>
+		</nav>
+		
+		<select class="form-control" ng-model="nav" ng-init="nav = nav || navOptions[0].slug" ng-options="option.slug as option.name for option in navOptions"></select>
+	</div>
+</div> -->

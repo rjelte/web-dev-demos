@@ -1,0 +1,24 @@
+	<!-- === MAIN Background === -->
+<div class="game">
+	<div id="grid"> 
+	<div class="position"></div>
+	<div class="position"></div>
+	<div class="position"></div>
+	<div class="position"></div>
+	<div class="position"></div>
+	<div class="position"></div>
+	<div class="position"></div>
+	<div class="position"></div>
+	<div class="position"></div>
+	<div class="position"></div>
+	<div class="position"></div>
+	<div class="position"></div>
+	<div class="position"></div>
+	<div class="position"></div>
+	<div class="position"></div>
+	<div class="position"></div>
+	<div class="square square{$ square.level $} pos-{$ Math.floor($index / 4) $}-{$ $index % 4 $}" ng-repeat="square in squares track by $index" ng-click="show = !show">
+		<span>{$ symbols[square.level] $}</span>
+	</div>
+	</div>
+</div>
